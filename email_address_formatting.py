@@ -12,10 +12,10 @@ for customer in customers:
     email = customer["email"]
     
     if email == "":
-        print(f"Missing email address: {customer["name"]}")
+        print(f"Missing email address: {customer['name']}")
         invalid_email_customers.append(customer["name"])
-    elif "@" not in email:
-        print(f"Missing @ in email: {customer["name"]}")
+    elif "@" not in email or not email.endswith(".com"):
+        print(f"Invalid email format: {customer['name']}")
         invalid_email_customers.append(customer["name"])
     else:
         print("No formatting issue")
